@@ -1,0 +1,514 @@
+/*RESETS*/
+:root {                                   
+  --first-color: #000;
+  --second-color: #fff;
+  --third-color:#a52a2a;
+  --first-backgroud-color: #000;
+  --second-background-color: #a52a2a;
+  --font: 'Newsreader', serif;
+  --max-width: 1200px;
+  --header-height: 9rem;
+}
+
+*,                                      
+*::after,
+*::before {
+  box-sizing: inherit;  
+}
+
+
+/*TAGS PRINCIPALES*/
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  scroll-behavior: smooth; 
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(4,auto);
+  grid-template-areas: 
+  "header header header header header "
+  "main main main main main"
+  "main main main main main"
+  "footer footer footer footer footer";
+  /* min-height: 100%; */
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--first-color);
+  background-image: url(img/prueba2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
+/*HEADER*/
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  grid-area: header;
+  width: 100%;
+  height: var(--header-height);
+  padding: 1rem;
+  background-color: var(--first-color);
+}
+
+/*NAVEGADOR*/
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: none;
+  background-color: var(--first-backgroud-color);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.navbar a {
+  padding: 1rem;
+  font: 1.5rem;
+  font-family: 'Newsreader', serif; 
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navbar a:hover{
+  color: var(--second-color);
+  background-color: var(--second-background-color);
+}
+
+.navbar.is-active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/*CONTENIDO PRINCIPAL*/
+
+.main-index {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;  
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;  
+  height: 100%;
+  margin-top: 5rem;
+}
+
+.words{
+  width: 90%;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+
+/*MAIN DE VINOS/CERVEZAS/COMIDAS*/
+
+.container-cards {
+  margin: 5rem 0;
+}
+
+.card {
+  width: 12rem;
+  margin-top: 2rem;
+  padding: .5rem;
+}
+
+/*MAIN DEL CONTACTO*/
+
+.main-contact {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;  
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90vw;
+  margin-top: 9.5rem;
+  color: var(--third-color);
+  text-align: center;
+}
+
+.container-form iframe {
+  margin: 2rem 1rem 4rem 1rem;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.form textarea {
+  width: 80vw;
+  height: 8rem;
+  margin-bottom: 1rem;
+}
+
+.form input {
+  width: 90%;
+  padding: .5rem;
+}
+
+/* BOTONES */
+
+.btns {
+  text-align: center;
+}
+
+.btns button {
+  display: inline-block;
+  width: 10rem;
+  margin: .5rem;
+  font-weight: bold;
+  color: var(--first-color);
+  cursor: pointer;
+  background-color: var(--second-background-color);
+  border: none;
+  border-radius: .5rem;
+}
+
+
+/*FOOTER*/
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  grid-area: footer;
+  width: 100%;
+  padding: 1rem;
+  font-family: 'Newsreader', serif;
+  font-size: .8rem;
+  color: var(--third-color);
+  text-align: center;
+  background-color: var(--first-backgroud-color);
+}
+
+.container-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: left;
+}
+
+.footer a:hover {
+  color: var(--third-color);
+}
+
+
+/*DESGLOSE DE ETIQUETAS*/
+
+a {
+  color: var(--third-color);
+  transition: all 0.3s ease-out;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+
+h2 {
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Homemade Apple', cursive;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center; 
+  color: var(--third-color);
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+
+/*COMPONENTES*/
+
+.header > .container-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: auto 1rem;
+}
+
+.container-header {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.none {
+  display: none;
+}
+
+.menu-boton {
+  cursor: pointer;
+  background-color: var(--second-background-color);
+  border: none;
+  outline: thin solid var(--second-background-color);
+}
+
+.menu-boton svg {
+  fill: var(--first-color);
+}
+
+
+@media screen and (min-width: 768px) {
+  
+  /*TABLET*/
+
+  /*HEADER*/
+
+  .header {
+    position: sticky;
+    top: 0;
+    height: calc(var(--header-height) - 1rem);
+    padding: 1rem;
+  }
+
+  .menu-boton {
+    display: none;
+  }
+
+  /*NAVEGACION*/
+
+  .navbar {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    font-size: 18px;
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .navbar a {
+    padding: 0 1rem;
+    color: rgb(146, 110, 110);
+  }
+
+  .navbar a:hover {
+    color: var(--third-color);
+    background-color: transparent;
+  }
+
+  /*MAIN*/
+  
+  .words {
+    position: fixed;
+    right: 0;
+    width: 25rem;
+    margin-top: -10rem;
+  }
+
+  
+  h2 {
+    font-size: 50px;
+  } 
+
+  /*MAIN VINOS/CERVEZAS/COMIDAS*/
+
+  .main {
+    margin-top: -2rem;
+  }
+
+  .container-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5rem 0;
+  }
+
+  .card {
+    width: 12rem;
+    margin: 2rem 1rem;
+  }
+
+  /*MAIN FORMULARIO*/
+  
+  .container-form {
+    width: 65vw;
+    margin-top: 1rem;
+  }
+
+  .form textarea {
+    width: 58vw;
+  }
+
+  .container-form iframe {
+    margin-bottom: 5.5rem;
+  }
+
+
+  /*FOOTER*/
+
+  .footer {
+    font-size: 1rem;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  
+  /*DESKTOP*/
+
+  /*HEADER*/
+
+  .header {
+    position: sticky;
+    top: 0;
+    height: calc(var(--header-height) - 1rem);
+    padding: 1rem;
+  }
+
+  .menu-boton {
+    display: none;
+  }
+
+  /*NAVEGACION*/
+
+  .navbar {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    font-size: 18px;
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .navbar a {
+    padding: 0 1rem;
+    color: rgb(146, 110, 110);
+  }
+
+  .navbar a:hover {
+    color: var(--third-color);
+    background-color: transparent;
+  }
+
+  /*MAIN INICIO*/
+  
+  h2 {
+    position: relative;
+    margin: 0;
+    font-size: 50px;
+    animation-name: desplazar;
+    animation-duration: 3s;
+  } 
+
+  @keyframes desplazar {
+  from {
+    right: 0%; 
+  }
+
+  to {
+    right: 200%;
+  }
+} 
+
+  /*MAIN VINOS/CERVEZAS/COMIDAS*/
+
+  .main {
+    margin-top: -2rem;
+  }
+
+  .container-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5rem 0;
+  }
+
+  .card {
+    width: 12rem;
+    margin: 2rem 1rem;
+  }
+
+  /*MAIN FORMULARIO*/
+  
+  .container-form {
+    width: 50vw;
+    margin-top: 1rem;
+  }
+
+  .form textarea {
+    width: 45vw;
+  }
+
+  .container-form iframe {
+    margin-bottom: 5.5rem;
+  }
+
+  /*FOOTER*/
+  
+
+  .footer {
+    font-size: 1.2rem;
+  }
+
+  .container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 55vw;
+    text-align: left;
+  }
+
+  .container-footer a > i {
+    font-size: 1rem;
+  }
+} 
